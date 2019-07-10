@@ -1,0 +1,24 @@
+ng <div class="container">
+    <h2>{{title}}</h2>
+    <hr>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Links -->
+        <ul class="navbar-nav">
+                <li class="nav-item" >
+                        <a routerLink="addProject" class="btn btn-primary active" role="button" routerLinkActive="active">Add Project</a>
+                    </li>
+            <li class="nav-item"  style="margin-left: 10px;">
+                <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add Task</a>
+            </li>
+            <li class="nav-item"  style="margin-left: 10px;">
+                    <a routerLink="addUser" class="btn btn-primary active" role="button" routerLinkActive="active">Add User</a>
+                </li>
+            <li class="nav-item" style="margin-left: 10px;">
+                <a routerLink="view" class="btn btn-primary active" role="button" routerLinkActive="active">View Task</a>
+            </li>
+        </ul>
+
+    </nav>
+    <router-outlet></router-outlet>
+</div>

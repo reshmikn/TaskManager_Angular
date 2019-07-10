@@ -1,0 +1,8 @@
+.customWidthClass{
+    flex: 0 0 150px;
+ }
+
+ .mat-header-cell, .mat-sort-header {
+    background-color: darksalmon;
+    color: Maroon;
+  }

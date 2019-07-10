@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1>View Project</h1>
+  </div>
+  <div>
+
+<div>
+    
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+       
+         <ng-container matColumnDef="projectName">
+           <th mat-header-cell *matHeaderCellDef  mat-sort-header style="width: 150px;">Project Name </th>
+           <td mat-cell *matCellDef="let project" style="width: 170px;"> {{project.projectName}} </td>
+         </ng-container>
+        
+         <ng-container matColumnDef="startDate">
+           <th mat-header-cell *matHeaderCellDef  mat-sort-header style="width: 150px;"> Start Date </th>
+           <td mat-cell *matCellDef="let project" style="width: 150px;"> {{project.startDate}} </td>
+         </ng-container>
+        
+         <ng-container matColumnDef="endDate">
+           <th mat-header-cell *matHeaderCellDef  mat-sort-header style="width: 150px;">End Date </th>
+           <td mat-cell *matCellDef="let project" style="width: 150px;"> {{project.endDate}} </td>
+         </ng-container>
+
+         <ng-container matColumnDef="priority">
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header style="width: 100px;">Priority </th>
+            <td mat-cell *matCellDef="let project" style="width: 100px;"> {{project.priority}} </td>
+          </ng-container>
+         <ng-container matColumnDef="update">
+             <th mat-header-cell *matHeaderCellDef style="width: 100px;"> Update </th>
+             <td mat-cell *matCellDef="let project" style="width: 100px;">
+               <button mat-icon-button color="accent" (click)="redirectToEdit(project.projectId)">
+                   <mat-icon class="mat-18">Update</mat-icon>
+               </button>
+             </td>
+           </ng-container>
+          
+           <ng-container matColumnDef="suspend">
+               <th mat-header-cell *matHeaderCellDef style="width: 100px;"> Suspend </th>
+               <td mat-cell *matCellDef="let project" style="width: 100px;">
+                 <button mat-icon-button color="accent" (click)="deleteProject(project)">
+                     <mat-icon class="mat-18">Suspend</mat-icon>
+                 </button>
+               </td>
+             </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+       </table>
+   
+   </div>
