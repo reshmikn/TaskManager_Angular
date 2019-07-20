@@ -1,47 +1,63 @@
+<div class="mat-elevation-z8">  
 
-
-<div [hidden]="submitted" style="width: 400px;">
+<div [hidden]="submitted" >
     <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            
-         <label for="projectName">Project</label>
-            <input type="text" required [(ngModel)]="project.projectName" name="projectName" class="form-control" id="projectName">
-              </div>
-              <div class="form-group">
-         <label>Set start and End date</label>
-         <input id="checkFollower" type="checkbox" ng-checked="project.dateCheck">
-         
+    <div class="form-group">   
+     <table > 
+     
+         <tr>
+           <td>  
+             <label for="projectName">Project</label>
+             <input type="text" required [(ngModel)]="project.projectName" name="projectName" class="form-control" id="projectName">
+           </td>
+          </tr>
+        
+        <tr>
+          <td>
+            <label>Set start and End date</label>
+            <input id="checkFollower" type="checkbox" ng-checked="project.dateCheck">
+          </td>
+          </tr>
+          <tr>
+         <td>
             <label for="startDate">Start date</label>
             <mat-form-field>
            <input matInput [matDatepicker] = "startDate" [(ngModel)]="project.startDate" name="startDate" class="form-control" placeholder = "Choose a date">
            <mat-datepicker-toggle matSuffix [for] = "startDate"></mat-datepicker-toggle>
            <mat-datepicker #startDate></mat-datepicker>
-        </mat-form-field>
+           </mat-form-field>
+         </td>
+         <td>
+           <label for="endDate">End date</label>
+           <mat-form-field>
+            <input matInput [matDatepicker] = "endDate" [(ngModel)]="project.endDate" name="endDate" class="form-control" placeholder = "Choose a date">
+            <mat-datepicker-toggle matSuffix [for] = "endDate"></mat-datepicker-toggle>
+            <mat-datepicker #endDate></mat-datepicker>
+           </mat-form-field>
+        </td>
+        </tr>
+
   
-        <label for="endDate">End date</label>
-        <mat-form-field>
-       <input matInput [matDatepicker] = "endDate" [(ngModel)]="project.endDate" name="endDate" class="form-control" placeholder = "Choose a date">
-       <mat-datepicker-toggle matSuffix [for] = "endDate"></mat-datepicker-toggle>
-       <mat-datepicker #endDate></mat-datepicker>
-    </mat-form-field>
-   </div>
-        <div class="form-group">
+        <tr><td>
           <label for="priority">Priority</label>
           <mat-slider min="1" max="5" step="0.5" value="1.5" [(ngModel)]="project.priority" name="priority"></mat-slider>
-        </div>
+       </td></tr>
         
-        <div class="form-group">
+       <tr><td>
         <label for="manager">Manager</label>
         <select [(ngModel)]="project.userId" name="userId">  
                 <option *ngFor="let user of users | async" [ngValue]="user.userId">{{user.firstName}} </option>  
         </select>  
-    </div>
-       
-          <li>     
-        <button type="submit" class="btn btn-success">Add </button>
-        <button type="reset" class="btn btn-success">Reset</button>
-        </li>
+        </td></tr>
+    </table>   
+</div>
+  
+             
+        <button type="submit" class="btn btn-success" style="margin-left: 120px;">Add </button>
+        <button type="reset" class="btn btn-success"style="margin-left: 30px;">Reset</button>
+  
     </form>
 </div>
 
-<button class="btn btn-primary active" (click)="viewProject()" style="margin-left: 20px;"> View Project</button>
+<button class="btn btn-primary active" (click)="viewProject()" style="margin-left: 320px;"> View Project Details</button>
+</div>

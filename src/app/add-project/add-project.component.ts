@@ -36,7 +36,7 @@ save() {
  }
 
  viewProject (){
-  alert("hi");
+  
      this.router.navigate(['viewProject']);
 }
 }

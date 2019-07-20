@@ -1,4 +1,4 @@
-
+<div class="mat-elevation-z8"> 
 <div [hidden]="submitted" style="width: 400px;">
     <form (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -17,12 +17,11 @@
             <input type="text" required  [(ngModel)]="user.employeeId" name="employeeId" class="form-control" id="employeeId">
          </div>
          
-        <button type="submit" class="btn btn-success">Add</button>
-        <button type="reset" class="btn btn-success">Reset</button>
+        <button type="submit" class="btn btn-success" style="margin-left: 10px;">Add</button>
+        <button type="reset" class="btn btn-success" style="margin-left: 10px;">Reset</button>
+        <button class="btn btn-primary active" (click)="viewUser()" style="margin-left: 200px;"> View User</button>
+        
    </form>
    </div>
-   <div>
    
-    <button class="btn btn-primary active" (click)="viewUser()" style="margin-left: 20px;"> View User</button>
-    
    

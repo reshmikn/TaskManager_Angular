@@ -15,11 +15,11 @@
         </mat-form-field>
   
         <label for="endDate">End date</label>
-       
+       <mat-form-field>
        <input matInput [matDatepicker] = "endDate" formControlName="endDate" name="endDate" class="form-control" >
        <mat-datepicker-toggle matSuffix [for] = "endDate"></mat-datepicker-toggle>
        <mat-datepicker #endDate></mat-datepicker>
-   
+    </mat-form-field>
    </div>
         <div class="form-group">
           <label for="priority">Priority</label>
